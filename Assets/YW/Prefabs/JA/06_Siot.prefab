@@ -100,14 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startRadius: 0.08
   changeRadius: 0.08
-  radiusRange: {x: 0.08, y: 0.18}
+  radiusRange: {x: 0.08, y: 0.25}
   radiusInterval: 5
-  startHeight: 0.08
-  changeHeight: 0.08
-  heightRange: {x: 1.2, y: 5}
-  heightInterval: 3
+  startHeight: 2
+  changeHeight: 2
+  heightRange: {x: 2, y: 12}
+  heightInterval: 5
   segment: 8
-  isTest: 0
+  isRadiusTest: 0
+  isHeightTest: 0
 --- !u!65 &-2943545485223197424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4828703832436679061}
         m_TargetAssemblyTypeName: ProceduralToolkit.Samples.Siot, Assembly-CSharp
-        m_MethodName: RadiusRighthand
+        m_MethodName: TriggerRadiusHeightAdjust
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

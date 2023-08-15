@@ -99,6 +99,7 @@ public class VolumetricLightScattering : ScriptableRendererFeature
                 Vector3 sunDirectionWorldSpace = RenderSettings.sun.transform.forward;
                 Vector3 cameraPositionWorldSpace = camera.transform.position;
                 Vector3 sunPositionWorldSpace = cameraPositionWorldSpace + sunDirectionWorldSpace;
+                //Vector3 sunPositionWorldSpace = cameraPositionWorldSpace;
                 Vector3 sunPositionViewportSpace = camera.WorldToViewportPoint(sunPositionWorldSpace);
 
                 radialBlurMaterial.SetVector("_Center", new Vector4(sunPositionViewportSpace.x, sunPositionViewportSpace.y, 0, 0));

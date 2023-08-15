@@ -243,7 +243,7 @@ namespace FrostweepGames.Plugins.GoogleCloud.SpeechRecognition.Examples
         }
 
         //sm device
-        public int deviceNum=0;
+        public int deviceNum = 0;
         private void RefreshMicsButtonOnClickHandler()
         {
             _speechRecognition.RequestMicrophonePermission(null);
@@ -492,15 +492,8 @@ namespace FrostweepGames.Plugins.GoogleCloud.SpeechRecognition.Examples
             InsertRecognitionResponseInfo(recognitionResponse);
             _resultText.text += "\n";
 
-            if (recognitionResponse == null)
-            {
-                transcript = "레오나르도다빈치";
-            }
-            else
-            {
-                transcript = recognitionResponse.results[0].alternatives[0].transcript;
-            }
-            
+            transcript = recognitionResponse.results[0].alternatives[0].transcript;
+
             // Display Korean Break
             _resultText.text += "\nKorean Break:\n";
             _resultText.text += HangulDecomposer.DecomposeHangul(transcript);

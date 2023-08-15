@@ -601,7 +601,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Occlusion",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.7599999904632568,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -681,8 +681,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -310.0,
-            "y": 332.0,
+            "x": -286.0,
+            "y": 255.99998474121095,
             "width": 108.0,
             "height": 34.0
         }
