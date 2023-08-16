@@ -14,7 +14,7 @@ public class SizeConfig : MonoBehaviour
 
     [Header("Height")]
     public float startHeight = 2.0f;
-    public float changeHeight = 2.0f;
+    public static float changeHeight = 2.0f;
 
     public Vector2 heightRange = new Vector2(1.2f, 5f);
     public int heightInterval = 3;

@@ -51,7 +51,7 @@ namespace ProceduralToolkit.Samples
             {
                 //Debug.Log("height 바꿔주고 있어.");
 
-                changeHeight = SizeConfig.Instance.changeHeight;
+                changeHeight = SizeConfig.changeHeight;
                 GenerateMesh(changeRadius, changeHeight);
                 isHeightTest = false;
                 isHeightChange = false;

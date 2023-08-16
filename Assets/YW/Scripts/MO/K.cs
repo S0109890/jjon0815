@@ -24,8 +24,8 @@ namespace ProceduralToolkit.Samples
 
         private void Start()
         {
-            startHeight = changeHeight = SizeConfig.Instance.startHeight;
-            startRadius = changeRadius = SizeConfig.Instance.startRadius;
+            //startHeight = changeHeight = SizeConfig.Instance.startHeight;
+            //startRadius = changeRadius = SizeConfig.Instance.startRadius;
 
             GenerateMesh(startRadius, startHeight);
         }
@@ -52,7 +52,7 @@ namespace ProceduralToolkit.Samples
             {
                 //Debug.Log("height 바꿔주고 있어.");
 
-                changeHeight = SizeConfig.Instance.changeHeight;
+                changeHeight = SizeConfig.changeHeight;
                 GenerateMesh(changeRadius, changeHeight);
                 isHeightTest = false;
                 isHeightChange = false;
