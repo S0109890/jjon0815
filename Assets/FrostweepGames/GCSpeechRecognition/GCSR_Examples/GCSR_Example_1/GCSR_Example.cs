@@ -514,8 +514,13 @@ namespace FrostweepGames.Plugins.GoogleCloud.SpeechRecognition.Examples
             _resultText.text += "\n\n ID of the User name:\n " + BreakUserName;
 
             print("########result" + BreakUserName);
+
             //sm gamemanager에 값저장
-            GameManager.Instance.SetBreakUserName(BreakUserName);
+            BreakUserName = BreakUserName.Trim();
+            if (String.IsNullOrEmpty(BreakUserName))
+            {
+                //JAMOSettings.Instance.userName = BreakUserName;
+            }
 
         }
 

@@ -1,9 +1,9 @@
+
 using Unity.Mathematics;
 using UnityEngine;
 
 namespace Klak.Motion
 {
-    [RequireComponent(typeof(Rigidbody))]
     [UnityEngine.AddComponentMenu("Klak/Procedural Motion/Smooth Rigidbody Follow")]
     public sealed class SM_Follow : MonoBehaviour
     {
@@ -21,12 +21,42 @@ namespace Klak.Motion
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-            _rb.useGravity = false; // 중력 영향 제거, 필요에 따라 제거 가능
+            // Initialize with gravity enabled just in case
+            _rb.useGravity = true;
         }
 
         private void FixedUpdate()
         {
+            UpdateTarget();
+
+            if (target)
+            {
+                UpdateMotion();
+            }
+
+        }
+
+        private void UpdateTarget()
+        {
+            GameObject[] jamoObjects = GameObject.FindGameObjectsWithTag("JAMO");
+            foreach (var obj in jamoObjects)
+            {
+                Hoverable hoverable = obj.GetComponent<Hoverable>();
+                if (hoverable && hoverable.isHovered)
+                {
+                    target = obj.transform;
+                    _rb.useGravity = false;  // Turn off gravity when target is found
+                    return;
+                }
+            }
+            target = null;
+            _rb.useGravity = true;  // Turn on gravity when no target is found
+        }
+
+        private void UpdateMotion()
+        {
             var dt = Time.fixedDeltaTime;
+
 
             Vector3 targetPositionVelocity = Vector3.zero;
             if (positionSpeed > 0)
@@ -89,8 +119,13 @@ namespace Klak.Motion
 
         public void Snap()
         {
+            if (!target) return;
+
             if (positionSpeed > 0) _rb.position = target.position;
             if (rotationSpeed > 0) _rb.rotation = target.rotation;
         }
     }
 }
+
+
+

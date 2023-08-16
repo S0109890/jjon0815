@@ -58,8 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    resolutionScale: 0.232
-    intensity: 0.428
+    resolutionScale: 0.381
+    intensity: 0.437
     blurWidth: 0.413
 --- !u!114 &2352465845007970426
 MonoBehaviour:
