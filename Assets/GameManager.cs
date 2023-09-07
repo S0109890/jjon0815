@@ -13,15 +13,13 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Make this object persistent
         }
         else
         {
-            Destroy(gameObject); // Ensure only one instance is there
+            Destroy(gameObject);
         }
     }
 
-    //여기 이름 저장 !!!
     public string __BreakUserName;
     //gcsr 에서 BreakUserName받아온거를 
     //저장해놨다가

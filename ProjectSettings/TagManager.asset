@@ -16,7 +16,6 @@ TagManager:
   - Middle
   - LEFT_HAND_TAG
   - RIGHT_HAND_TAG
-  - JAMO
   layers:
   - Default
   - TransparentFX
